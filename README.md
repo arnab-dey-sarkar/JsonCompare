@@ -1,1 +1,1 @@
-# JsonCompare
+This project takes in two Json files and compares them based on the mapping of the fields provided in an excel file.It also updates the Excel file based on the expected value,actual value and pass/fail status.

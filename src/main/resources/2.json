@@ -1,0 +1,8 @@
+{
+  "employee": {
+    "ename": "sonoo",
+    "esalary": 56000,
+    "emarried": true,
+    "ecity": "Bangalore"
+  }
+}
