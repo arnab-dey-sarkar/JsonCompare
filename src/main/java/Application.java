@@ -22,7 +22,6 @@ public class Application {
         compareJsonResponse(dataFile, jsonFile1, jsonFile2);
 
     }
-
     public static void compareJsonResponse(String dataFile, String jsonFile1, String jsonFile2) {
         String query = "SELECT * FROM Sheet1";
         try {
@@ -67,9 +66,7 @@ public class Application {
             }
             recordset.close();
             connection.close();
-        } catch (FilloException | IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (FilloException | IOException | ParseException e) {
             e.printStackTrace();
         }
     }
