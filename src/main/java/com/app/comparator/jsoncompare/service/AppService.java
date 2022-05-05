@@ -19,11 +19,11 @@ import org.springframework.stereotype.Service;
 public class AppService {
     @Autowired
     AppRepository appRepository;
-    public AppModel compare(String jsonFile1, String jsonFile2, String dataFile)
-    {
-        AppModel appModel=new AppModel();
-        String fields=new String();
-        int c=0;
+
+    public AppModel compare(String jsonFile1, String jsonFile2, String dataFile) {
+        AppModel appModel = new AppModel();
+        String fields = new String();
+        int c = 0;
         String query = "SELECT * FROM Sheet1";
         try {
             Fillo fillo = new Fillo();
@@ -50,12 +50,16 @@ public class AppService {
                 String expected = jsonContext1.read(oldValue).toString().trim();
                 String actual = jsonContext2.read(newValue).toString().trim();
 
-                fields=fields+" Expected="+expected+" Actual="+actual+System.lineSeparator();
-                appModel.setFields(fields);
-                if(!expected.equals(actual))
+
+
+                if (!expected.equals(actual)) {
+                    fields = fields + " Expected=" + expected + " Actual=" + actual + ";";
                     c++;
+                }
+
             }
-            if(c>0)
+            appModel.setFields(fields);
+            if (c > 0)
                 appModel.setStatus("Fail");
             else
                 appModel.setStatus("Pass");
